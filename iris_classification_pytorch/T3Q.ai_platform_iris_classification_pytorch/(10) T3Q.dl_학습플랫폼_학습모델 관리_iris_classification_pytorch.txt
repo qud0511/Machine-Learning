@@ -1,0 +1,121 @@
+# T3Q.dl_학습플랫폼_학습모델 관리_iris_classification_pytorch
+
+학습플랫폼 >> 학습모델 관리
+
+1. [T3Q]AI 훈민정음 >> 학습플랫폼 >> 학습모델 관리
+
+번호	카테고리		알고리즘			  학습명				  등록자				실행정보					학습상태
+												수행시작일시	수행종료일시	결과(Accuracy)
+1	Classification 	iris_classification_train_tc	  iris_classification_trainmodel_torch	  hunmin		-		-		-			시작전
+
+선택하고
+
+2. [T3Q]AI 훈민정음 >> 학습플랫폼 >> 학습모델 관리
+
+학습모델 상세
+
+1) Step 1. 학습모델 기본정보
+모델명  		iris_classification_trainmodel_torch
+전처리 모델명  	iris_classification_premodel		iris_classification_premodel
+
+2) Step 2. 학습모델 알고리즘 정보
+문제유형  	Classification
+알고리즘  	iris_classification_train_tc
+평가방법 / 평가값  none	없음
+3) Step 3. 학습수행 관리정보
+
+시작전	learnexec-2627-2022-06-20	시작전
+
+(1) 공통 파라미터
+
+초기화방법		Xavier uniform
+랜덤seed		777
+CPU			1 코어 
+Memory		4 Gi
+
+(2) 학습상태
+학습상태  시작전   [ - ~ - ]
+
+Accuracy 	Loss		Confusion Matrix 
+
+Precision/Recall/F1-score
+
+실행 버튼 누르고
+
+완료  2분 [ 2022-06-20 17:38:34 ~ 2022-06-20 17:41:05 ]
+확인 후 
+
+(3) 학습로그
+
+2022-07-18 04:19:49,934 [ INFO] root: ### Train params ###
+2022-07-18 04:19:49,934 [ INFO] root: {'learn_id': 2527, 'learn_e_id': 3035, 'workspace_id': 't3qai', 'user_id': None, 'epoch': None, 'comm_method': 'db', 'log_path': '/data/aip/logs', 'cpu': '1', 'memory': '16Gi', 'gpu': '0', 'train_profiling': True, 'ds_idx': 1}
+2022-07-18 04:19:49,934 [ INFO] root: ### end ###
+2022-07-18 04:19:50,229 [ WARN] root: datasource_repo_id : 137, datasource_repo_obj : <DataSourceRepo 137>, repo_type : file
+2022-07-18 04:19:50,258 [ INFO] root: algo_path=/data/aip/logs/t3qai/mods/algo_428/1
+2022-07-18 04:19:52,687 [DEBUG] tensorflow: Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2022-07-18 04:19:53,649 [ INFO] root: [hunmin log]  the start line of the function [exec_train]
+2022-07-18 04:19:53,650 [ INFO] root: [hunmin log] tm.train_data_path : /data/aip/dataset/t3qai/pm/pm_747/ds_755
+2022-07-18 04:19:53,650 [ INFO] root: [hunmin log] Files and directories in /data/aip/dataset/t3qai/pm/pm_747/ds_755 :
+2022-07-18 04:19:53,650 [ INFO] root: [hunmin log] dir_list : ['iris.csv']
+2022-07-18 04:19:53,671 [ INFO] root: [hunmin log] dataset :      SepalLengthCm  SepalWidthCm  PetalLengthCm  PetalWidthCm         Species
+0              5.1           3.5            1.4           0.2     Iris-setosa
+1              4.9           3.0            1.4           0.2     Iris-setosa
+2              4.7           3.2            1.3           0.2     Iris-setosa
+3              4.6           3.1            1.5           0.2     Iris-setosa
+4              5.0           3.6            1.4           0.2     Iris-setosa
+..             ...           ...            ...           ...             ...
+145            6.7           3.0            5.2           2.3  Iris-virginica
+146            6.3           2.5            5.0           1.9  Iris-virginica
+147            6.5           3.0            5.2           2.0  Iris-virginica
+148            6.2           3.4            5.4           2.3  Iris-virginica
+149            5.9           3.0            5.1           1.8  Iris-virginica
+
+[150 rows x 5 columns]
+2022-07-18 04:19:53,690 [ INFO] root: [hunmin log] net : Net(
+  (fc1): Linear(in_features=4, out_features=32, bias=True)
+  (fc2): Linear(in_features=32, out_features=32, bias=True)
+  (fc3): Linear(in_features=32, out_features=3, bias=True)
+  (softmax): Softmax(dim=1)
+)
+2022-07-18 04:19:54,432 [ INFO] root: [hunmin log] Epoch 0/100, Loss: 1.120, Accuracy: 0.317
+2022-07-18 04:19:57,269 [ INFO] root: [hunmin log] Epoch 10/100, Loss: 0.807, Accuracy: 0.725
+2022-07-18 04:20:00,769 [ INFO] root: [hunmin log] Epoch 20/100, Loss: 0.639, Accuracy: 0.967
+2022-07-18 04:20:04,169 [ INFO] root: [hunmin log] Epoch 30/100, Loss: 0.591, Accuracy: 0.983
+2022-07-18 04:20:08,469 [ INFO] root: [hunmin log] Epoch 40/100, Loss: 0.582, Accuracy: 0.975
+2022-07-18 04:20:12,369 [ INFO] root: [hunmin log] Epoch 50/100, Loss: 0.579, Accuracy: 0.975
+2022-07-18 04:20:16,470 [ INFO] root: [hunmin log] Epoch 60/100, Loss: 0.577, Accuracy: 0.975
+2022-07-18 04:20:20,072 [ INFO] root: [hunmin log] Epoch 70/100, Loss: 0.576, Accuracy: 0.975
+2022-07-18 04:20:23,969 [ INFO] root: [hunmin log] Epoch 80/100, Loss: 0.576, Accuracy: 0.975
+2022-07-18 04:20:28,170 [ INFO] root: [hunmin log] Epoch 90/100, Loss: 0.575, Accuracy: 0.975
+2022-07-18 04:20:31,269 [ INFO] root: [hunmin log] net : Net(
+  (fc1): Linear(in_features=4, out_features=32, bias=True)
+  (fc2): Linear(in_features=32, out_features=32, bias=True)
+  (fc3): Linear(in_features=32, out_features=3, bias=True)
+  (softmax): Softmax(dim=1)
+)
+2022-07-18 04:20:31,270 [ INFO] root: [hunmin log] model_path : /data/aip/logs/t3qai/train/ln_2527/le_3035/1/iris_model.pth
+2022-07-18 04:20:31,468 [ INFO] root: [hunmin log] Files and directories in /data/aip/logs/t3qai/train/ln_2527/le_3035/1 :
+2022-07-18 04:20:31,469 [ INFO] root: [hunmin log] dir_list : ['logs', 'iris_model.pth']
+2022-07-18 04:20:33,115 [ INFO] root: [hunmin log] the end line of the function [train]
+
+
+
+
+
+2. 모델 배포 
+
+모델 배포 버튼 누르고
+
+아래의 팝업창이 뜨면
+
+학습모델 배포
+모델명을 입력하고 추론모델로 배포가 가능합니다.(50자이내)
+
+iris_classification_trainmodel_torch-2022-06-20
+
+배포 버튼 누름
+
+
+
+
+

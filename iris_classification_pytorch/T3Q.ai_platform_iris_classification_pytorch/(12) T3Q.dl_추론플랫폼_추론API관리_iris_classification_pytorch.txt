@@ -1,0 +1,82 @@
+# T3Q.dl_추론플랫폼_추론API관리_iris_classification_pytorch
+
+1. [T3Q]AI 훈민정음 >> 추론플랫폼 >> 추론API관리
+
+추론 API 조회
+
+신규등록 버튼 누르고
+
+
+1) 추론플랫폼 >> 추론API관리
+추론 API 등록
+
+추론모델을 검색하여
+
+추론모델 선택
+추론 모델명으로 검색가능
+
+번호	추론모델명				등록일			등록자
+1	iris_classification_trainmodel_torch-2022-06-20	2022-06-14 04:40:26	hunmin
+
+Showing 1 to 1 of 1 entries
+
+
+iris_classification_trainmodel-2022-06-14
+선택하고
+
+API 명*		iris_classification_api_torch
+추론모델*		iris_classification_trainmodel_torch-2022-06-20	
+사용여부		체크
+
+저장 버튼 누름
+
+2) 추론플랫폼 >> 추론API관리
+추론 API 조회
+
+번호	사용여부			API명			등록일		등록자					추론모델
+											카테고리		알고리즘			모델명					배포일자
+1	운영중		iris_classification_api_torch	2022-06-20 17:58:31	hunmin		Classification	iris_classification_train_tc	iris_classification_trainmodel_torch-2022-06-20	2022-06-20 17:47:21
+
+Showing 1 to 1 of 1 entries
+
+확인하여 선택
+
+3) 추론플랫폼 >> 추론API관리
+추론 API 상세
+
+테스트
+	
+API URL		http://idro3vub.dl.nhnes.net/model/api/b2cae/inference
+
+METHOD		POST
+
+요청		{
+		"data": "[[SepalLengthCm,SepalWidthCm,PetalLengthCm,PetalWidthCm,Species]]"
+		}
+
+요청		{
+		"data": "[[2,3,4,5]]"
+		}
+
+API 호출 버튼 누름
+
+
+응답		{"inference":["Iris-virginica"]}
+
+
+API URL /model 이후 부분만 카피하여 nifi 에서 사용
+/model/api/b2cae/inference
+
+T3Q.ai 실시간 추론에서 진행
+
+
+
+
+
+
+
+
+
+	
+
+

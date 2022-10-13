@@ -1,0 +1,84 @@
+# T3Q.dl_추론플랫폼_추론모델 관리_iris_classification_pytorch
+
+추론플랫폼 >> 추론모델관리
+
+1. [T3Q]AI 훈민정음 >> 추론플랫폼 >> 추론모델관리
+
+추론모델 관리
+
+번호		카테고리 > 알고리즘			모델명				서비스 타입	상태	배포자	배포일
+1	Classification > iris_classification_train	    iris_classification_trainmodel_torch-2022-06-20	일반		중지	hunmin	2022-06-13 09:32:44
+
+Showing 1 to 1 of 1 entries
+
+선택하여 누르고
+
+
+2. [T3Q]AI 훈민정음 >> 추론플랫폼 >> 추론모델관리
+
+1) 추론모델 정보
+
+중지	iris_classification_trainmodel_torch-2022-06-20
+2022-06-20 17:47:21
+
+서비스 시작 버튼 누르고
+
+서비스 리소스 설정
+CPU 1 코어 
+Memory 4 Gi
+확인 버튼 누름
+
+추론모델 서비스를 시작하시겠습니까?
+최대 5분 정도 소요될 수 있습니다.
+확인 버튼 누름
+
+추론모델 서비스가 기동되었습니다.
+OK 버튼 누름
+
+2) 추론모델 정보
+운영중	iris_classification_trainmodel_torch-2022-06-20
+배포일 : 2022-06-20 17:47:21
+
+(1) 리소스 현황 
+CPU	 	1
+Memory 		4Gi
+
+(2) 전처리 정보 / 학습 정보
+
+전처리 정보	상세보기
+학습 정보		상세보기
+
+
+3) 추론모델 검증
+(1) 추론모델테스트
+요청		입력 예시: [['/data/aip/file_group/pm/pm_334/ds_441/image/1/1230.png']]
+
+요청		[[1,2,3,4]]
+
+
+테스트 버튼 누름
+
+응답		"{\"inference\":[\"Iris-virginica\"]}\n"
+
+
+(2) 로그
+
+2022-07-01 08:56:58,049 [ INFO] root: [hunmin log] inference start
+2022-07-01 08:56:58,052 [ INFO] root: [hunmin log] df :    0  1  2  3
+0  2  3  4  5
+2022-07-01 08:56:58,052 [ INFO] root: [hunmin log] params : {'model': Net(
+  (fc1): Linear(in_features=4, out_features=32, bias=True)
+  (fc2): Linear(in_features=32, out_features=32, bias=True)
+  (fc3): Linear(in_features=32, out_features=3, bias=True)
+  (softmax): Softmax(dim=1)
+)}
+2022-07-01 08:56:58,052 [ INFO] root: [hunmin log] result: {}
+2022-07-01 08:56:58,053 [ INFO] root: [hunmin log] test_X: tensor([[2., 3., 4., 5.]])
+2022-07-01 08:56:58,054 [ INFO] root: [hunmin log] predict_out: tensor([[0.0044, 0.0628, 0.9329]], grad_fn=<SoftmaxBackward0>)
+2022-07-01 08:56:58,054 [ INFO] root: [hunmin log] predict_y : [2]
+2022-07-01 08:56:58,054 [ INFO] root: [hunmin log] result: {'inference': ['Iris-virginica']}
+2022-07-01 08:56:58,054 [ INFO] root: [hunmin log] inference finish
+2022-07-01 08:56:58,054 [ INFO] root: [hunmin log] the end line of the function [inference]
+
+
+
