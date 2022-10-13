@@ -1,0 +1,87 @@
+# T3Q.dl_학습플랫폼_학습모델 관리_iris_classification_sklearn
+
+학습플랫폼 >> 학습모델 관리
+
+1. [T3Q]AI 훈민정음 >> 학습플랫폼 >> 학습모델 관리
+
+번호	카테고리		알고리즘			학습명				등록자				실행정보					학습상태
+												수행시작일시	수행종료일시	결과(Accuracy)
+1	Classification	iris_classification_train_sk	iris_classification_trainmodel_sk	hunmin		-		-		-			시작전
+
+선택하고
+
+2. [T3Q]AI 훈민정음 >> 학습플랫폼 >> 학습모델 관리
+
+학습모델 상세
+
+1) Step 1. 학습모델 기본정보
+모델명  		iris_classification_trainmodel_sk
+전처리 모델명  	iris_classification_premodel		iris_classification_premodel
+
+2) Step 2. 학습모델 알고리즘 정보
+문제유형  	Classification
+알고리즘  	iris_classification_train_sk
+평가방법 / 평가값  none	없음
+
+3) Step 3. 학습수행 관리정보
+
+시작전	learnexec-2545-2022-06-20	시작전
+
+(1) 공통 파라미터
+
+랜덤 seed            777 	
+CPU			1 코어 
+Memory			4 Gi
+GPU			0 코어 
+
+(2) 학습상태
+학습상태  시작전   [ - ~ - ]
+
+Accuracy 	Loss		Confusion Matrix   Precision/Recall/F1-score
+
+실행 버튼 누르고
+
+완료  2초 [ 2022-06-20 17:36:29 ~ 2022-06-20 17:36:32 ]
+확인 후 
+
+(3) 학습로그
+
+2022-06-20 08:36:28,912 [ INFO] root: ### Train params ###
+2022-06-20 08:36:28,912 [ INFO] root: {'learn_id': 2156, 'learn_e_id': 2645, 'workspace_id': 't3qai', 'user_id': None, 'epoch': None, 'comm_method': 'db', 'log_path': '/data/aip/logs', 'cpu': '1', 'memory': '4Gi', 'gpu': '0', 'train_profiling': True, 'ds_idx': 1}
+2022-06-20 08:36:28,912 [ INFO] root: ### end ###
+2022-06-20 08:36:29,205 [ WARN] root: datasource_repo_id : 123, datasource_repo_obj : <DataSourceRepo 123>, repo_type : file
+2022-06-20 08:36:29,238 [ INFO] root: algo_path=/data/aip/logs/t3qai/mods/algo_352/1
+2022-06-20 08:36:30,564 [DEBUG] h5py._conv: Creating converter from 7 to 5
+2022-06-20 08:36:30,564 [DEBUG] h5py._conv: Creating converter from 5 to 7
+2022-06-20 08:36:30,564 [DEBUG] h5py._conv: Creating converter from 7 to 5
+2022-06-20 08:36:30,564 [DEBUG] h5py._conv: Creating converter from 5 to 7
+2022-06-20 08:36:31,933 [ INFO] root: [hunmin log] the start line of the function [train]
+2022-06-20 08:36:31,933 [ INFO] root: [hunmin log] train_data_path = /data/aip/dataset/t3qai/pm/pm_662/ds_669
+2022-06-20 08:36:31,933 [ INFO] root: [hunmin log] model_path = /data/aip/logs/t3qai/train/ln_2156/le_2645/1
+2022-06-20 08:36:31,954 [ INFO] root: [hunmin log] model = SVC(kernel='linear')
+2022-06-20 08:36:31,954 [ INFO] root: [hunmin log] accuracy = 0.9666666666666667
+2022-06-20 08:36:31,954 [ INFO] root: [hunmin log] model_build
+2022-06-20 08:36:31,958 [ INFO] root: [hunmin log] predict_y : ['Iris-virginica', 'Iris-setosa', 'Iris-virginica', 'Iris-virginica', 'Iris-versicolor', 'Iris-setosa', 'Iris-virginica', 'Iris-virginica', 'Iris-setosa', 'Iris-setosa', 'Iris-virginica', 'Iris-versicolor', 'Iris-versicolor', 'Iris-virginica', 'Iris-virginica', 'Iris-virginica', 'Iris-setosa', 'Iris-virginica', 'Iris-setosa', 'Iris-versicolor', 'Iris-versicolor', 'Iris-versicolor', 'Iris-virginica', 'Iris-setosa', 'Iris-virginica', 'Iris-setosa', 'Iris-virginica', 'Iris-setosa', 'Iris-virginica', 'Iris-virginica']
+2022-06-20 08:36:31,958 [ INFO] root: [hunmin log] actual_y : ['Iris-virginica', 'Iris-setosa', 'Iris-virginica', 'Iris-virginica', 'Iris-versicolor', 'Iris-setosa', 'Iris-virginica', 'Iris-virginica', 'Iris-setosa', 'Iris-setosa', 'Iris-virginica', 'Iris-versicolor', 'Iris-versicolor', 'Iris-virginica', 'Iris-virginica', 'Iris-virginica', 'Iris-setosa', 'Iris-virginica', 'Iris-setosa', 'Iris-versicolor', 'Iris-versicolor', 'Iris-versicolor', 'Iris-virginica', 'Iris-setosa', 'Iris-virginica', 'Iris-setosa', 'Iris-versicolor', 'Iris-setosa', 'Iris-virginica', 'Iris-virginica']
+2022-06-20 08:36:32,017 [ INFO] root: [hunmin log] the finish line of the function [train]
+
+
+
+
+2. 모델 배포 
+
+모델 배포 버튼 누르고
+
+아래의 팝업창이 뜨면
+
+학습모델 배포
+모델명을 입력하고 추론모델로 배포가 가능합니다.(50자이내)
+
+iris_classification_trainmodel-2022-06-21
+
+배포 버튼 누름
+
+
+
+
+

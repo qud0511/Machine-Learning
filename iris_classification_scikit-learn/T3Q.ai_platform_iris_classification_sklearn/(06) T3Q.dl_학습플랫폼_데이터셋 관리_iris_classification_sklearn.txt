@@ -1,0 +1,45 @@
+# T3Q.dl_학습플랫폼_데이터셋 관리_iris_classification_sklearn
+
+학습플랫폼 >> 데이터셋 관리
+
+1. T3Q.dl >> 프로젝트 목록 >> [T3Q]AI 훈민정음
+
+해당 프로젝트 선택하고
+
+2. [T3Q]AI 훈민정음 >> 학습플랫폼 >> 데이터셋 관리
+
+등록
+
+1) 데이터셋 등록
+
+(1) 데이터셋 명  iris_classification_dataset
+
+Drag & drop Files here
+
+또는
+
+Open the file Browser
+
+를 이용하여 
+
+로컬 폴더
+
+T3Q_HUNMIN_0_1_iris_classification >> meta_data >> dataset 폴더의
+
+iris.csv 파일을
+
+데이터셋으로 등록한 후
+
+저장
+
+====================================================
+(2) 데이터셋 명  iris_classification_dataset
+
+선택 경로 
+
+File explorer의 AI_HUNMIN / iris_transformation
+
+을 선택하고 hunmin_iris_transformation_2022-06-15-04:34:31.888.csv 파일 선택된 것 확인 후 
+
+저장
+

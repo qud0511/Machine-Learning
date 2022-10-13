@@ -1,0 +1,73 @@
+# T3Q.dl_학습플랫폼_전처리 모델 관리_iris_classification_sklearn
+
+학습플랫폼 >> 전처리 모델 관리
+
+1. [T3Q]AI 훈민정음 >> 학습플랫폼 >> 전처리 모델 관리
+
+전처리 모델 상세
+
+
+1) Step 1. 기본 정보
+모델명  		iris_classification_premodel
+참조 데이터셋 	iris_classification_dataset
+
+2) Step 2. 데이터셋 컬럼정보
+	사용여부		컬럼		데이터 분포도	타입			ID	LABEL
+1	right		SepalLengthCm				float64		left	left
+2	right		SepalWidthCm				float64		left	left
+3	right		PetalLengthCm				float64		left	left
+4	right		PetalWidthCm				float64		left	left
+5	right		Species					object			left	left
+
+Showing 1 to 5 of 5 entries
+
+3) Step 3. 전처리 룰 정보	
+
+소스컬럼													전처리룰
+SepalLengthCm , SepalWidthCm , PetalLengthCm , PetalWidthCm , Species			iris_classification_premodule
+
+Showing 1 to 1 of 1 entries
+
+4) Step 4. 전처리 실행정보
+
+번호	전처리명				데이터셋				처리시작일시	처리종료일시	상태		전처리
+1	iris_classification_premodel	   iris_classification_dataset		없음		없음		등록		상세/실행/중단/삭제  
+
+위 실행 버튼을 눌러 전처리를 수행함
+상태 완료 확인 후
+
+5) 전처리 상세
+
+(1) 전처리 상세 버튼 누름
+
+(2) 진행상황 확인
+현재 전처리의 진행상황 확인이 가능합니다
+
+이름				처리시작일		처리종료일		상태	로그
+0_iris_classification_premodule	2022-06-20 16:01:53	2022-06-20 16:01:53	완료	보기
+
+Showing 1 to 1 of 1 entries
+
+
+(3) 0_iris_classification_premodule - 로그 보기 버튼 누름
+
+로그 확인
+
+2022-06-20 07:01:53,699 [ INFO] root: ### preprocessing start ###
+2022-06-20 07:01:53,699 [ INFO] root: params={'pre_dataset_id': 667, 'rule': {'source_column': ['SepalLengthCm', 'SepalWidthCm', 'PetalLengthCm', 'PetalWidthCm', 'Species'], 'rule': 'preModel', 'rule_type': 'iris_classification_premodule', 'mod': 'U', 'param': {}, 'rule_no': '0', 'source_type': ['float64', 'float64', 'float64', 'float64', 'object'], 'module_info': '{"deploy_dt": "2022-06-20 09:54:46", "template": "Python", "version": "1.0", "status": "deployed", "image_name": 224, "module_name": "iris_classification_preprocess"}', 'output_type': ['default', 'default', 'default', 'default', 'default']}, 'do_fit': True, 'test_no': None, 'test_dataset_path': None, 'log_path': '/data/aip/logs'}
+2022-06-20 07:01:53,736 [ WARN] root: datasource_repo_id : 123, datasource_repo_obj : <DataSourceRepo 123>, repo_type : file
+2022-06-20 07:01:53,753 [ INFO] root: module_path=/data/aip/logs/t3qai/premodule/premodule_493/1
+2022-06-20 07:01:53,757 [ INFO] root: dp_module=<module 'iris_classification_preprocess' from '/data/aip/logs/t3qai/premodule/premodule_493/1/iris_classification_preprocess.py'>
+2022-06-20 07:01:53,757 [ INFO] root: [hunmin log] the start line of the function [process_for_train]
+2022-06-20 07:01:53,757 [ INFO] root: [hunmin log]  the start line of the function [exec_process]
+2022-06-20 07:01:53,757 [ INFO] root: [hunmin log] source_path : /data/aip/file_group/t3qai/377
+2022-06-20 07:01:53,757 [ INFO] root: [hunmin log] target_path : /data/aip/dataset/t3qai/pm/pm_660/ds_667
+2022-06-20 07:01:53,774 [ INFO] root: [hunmin log] the end line of the function [process_for_train]
+2022-06-20 07:01:53,791 [ INFO] root: ### preprocessing finished ###
+2022-06-20 07:01:53,791 [ INFO] root: Status : total:1, success:1, error:0
+
+
+
+
+2. 학습모델 설계 버튼 누름
+

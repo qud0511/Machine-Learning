@@ -1,0 +1,87 @@
+# T3Q.cep_실시간추론파이프라인_iris_classification_sklearn
+1. 실시간 추론 파이프라인
+
+T3Q.ai >> 실시간 추론 >> 파이프라인 등록
+
+1) 실시간 추론 템플릿
+Log to API(FileUpload)  	선택
+Image to API(FileUpload)
+로그파일을 업로드하여 실시간 추론 및 결과저장
+
+파이프라인 정보
+파이프라인 이름  	hunmin_iris_inference_sk
+파이프라인 설명
+
+2) Properties 설정
+Processor			Properties	Value
+DBCPConnectionPool	Password		postgres
+
+
+3) Variable 설정
+Name						Value
+(1) Log_API_FileUpload_AvroSchema	
+
+{ 
+   "type": "record",
+   "name": "TestRecord",
+   "fields" : [
+        {"name": "SepalLengthCm", "type": [ "null", "string" ]},
+        {"name": "SepalWidthCm", "type": [ "null", "string" ]},
+        {"name": "PetalLengthCm", "type": [ "null", "string" ]},
+        {"name": "PetalWidthCm", "type": [ "null", "string" ]}
+    ]
+}
+
+(2) Log_API_FileUpload_API_URL	
+
+/model/api/c9c63/inference
+
+(3) Log_API_FileUpload_Topic	
+
+hunmin_iris_sk_topic
+
+(4) Log_API_FileUpload_SourcePath	
+/AI_HUNMIN/iris_inference
+
+저장 버튼 누르고
+
+2. 파이프라인 관리 >> 실시간 추론
+
+파이프라인(hunmin_iris_inference_sk) 우측 상단의 기능 버튼 클릭(시작)
+
+(1) T3Q.ai >> 서비스 메뉴 >> FileViewer
+
+Log_API_FileUpload_SourcePath : 기 설정한 업로드 경로(/AI_HUNMIN/iris_inference)에 
+
+로컬 폴더
+
+T3Q_HUNMIN_0_1_iris_classification >> T3Q.ai_platform_iris_classification_sklearn >> 
+
+iris_classification_inference_dataset 폴더의
+
+iris.csv 데이터 파일 업로드
+
+(2) 데이터 적재 확인
+T3Q.ai >> 서비스 메뉴 >> PgAdmin
+
+inference_origin
+inference_result
+
+테이블 조회
+
+select * from inference_origin;
+
+select * from inference_result;
+
+데이터 저장 확인
+
+==========================
+SELECT * FROM public.inference_result
+where start_time like '%Mon, 20 Jun 2022%'
+order by start_time desc
+
+SELECT * FROM public.inference_result
+where url like '%/model/api/c9c63/inference%'
+order by start_time desc
+
+ 

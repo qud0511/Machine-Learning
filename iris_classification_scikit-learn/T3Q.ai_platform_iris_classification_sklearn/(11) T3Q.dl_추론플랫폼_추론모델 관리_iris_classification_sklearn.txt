@@ -1,0 +1,77 @@
+# T3Q.dl_추론플랫폼_추론모델 관리_iris_classification_sklearn
+
+추론플랫폼 >> 추론모델관리
+
+1. [T3Q]AI 훈민정음 >> 추론플랫폼 >> 추론모델관리
+
+추론모델 관리
+
+번호		카테고리 > 알고리즘			모델명				서비스 타입	상태	배포자	배포일
+1	Classification > iris_classification_train_sk	iris_classification_trainmodel_sk-2022-06-20	일반		중지	hunmin	2022-06-20 17:46:23
+
+Showing 1 to 1 of 1 entries
+
+선택하여 누르고
+
+
+2. [T3Q]AI 훈민정음 >> 추론플랫폼 >> 추론모델관리
+
+1) 추론모델 정보
+
+중지	iris_classification_trainmodel_sk-2022-06-20
+
+
+서비스 시작 버튼 누르고
+
+서비스 리소스 설정
+CPU 1 코어 
+GPU 0 코어 
+Memory 4 Gi
+확인 버튼 누름
+
+추론모델 서비스를 시작하시겠습니까?
+최대 5분 정도 소요될 수 있습니다.
+확인 버튼 누름
+
+추론모델 서비스가 기동되었습니다.
+OK 버튼 누름
+
+2) 추론모델 정보
+운영중	iris_classification_trainmodel_sk-2022-06-20
+배포일 : 2022-05-20 17:46:23
+
+(1) 리소스 현황 
+CPU	 	1
+GPU	 	0
+Memory 		4Gi
+
+(2) 전처리 정보 / 학습 정보
+
+전처리 정보	상세보기
+학습 정보		상세보기
+
+
+3) 추론모델 검증
+(1) 추론모델테스트
+요청		입력 예시: [['/data/aip/file_group/pm/pm_334/ds_441/image/1/1230.png']]
+
+요청		[['1','2','3','4']]
+
+테스트 버튼 누름
+
+응답		"{\"inference\":[\"Iris-virginica\"]}\n"
+
+
+(2) 로그
+
+2022-06-20 08:50:48,842 [ INFO] root: [hunmin log] df :      0  1    2    3
+0  4.9  3  1.4  0.2
+2022-06-20 08:50:48,842 [ INFO] root: [hunmin log] df.shape : (1, 4)
+2022-06-20 08:50:48,842 [ INFO] root: [hunmin log] type(df) : <class 'pandas.core.frame.DataFrame'>
+2022-06-20 08:50:48,842 [ INFO] root: [hunmin log] the end line of the function [transform]
+2022-06-20 08:50:48,842 [ INFO] root: [hunmin log] the start line of the function [inference]
+2022-06-20 08:50:48,844 [ INFO] root: [hunmin log] model : SVC(kernel='linear')
+2022-06-20 08:50:48,846 [ INFO] root: [hunmin log] scores : ['Iris-setosa']
+2022-06-20 08:50:48,846 [ INFO] root: [hunmin log] the end line of the function [inference]
+
+
