@@ -1,0 +1,39 @@
+FROM tensorflow/tensorflow:2.4.1-gpu
+
+ARG DEBIAN_FRONTEND="noninteractive"
+RUN sed -i 's/ftp.daum.net/old-releases.ubuntu.com/g' /etc/apt/sources.list
+
+RUN apt-key del 7fa2af80
+RUN apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/3bf863cc.pub
+
+# libraries for operservice
+RUN pip install --no-input category_encoders
+
+# prevent making cache not to preserve previous train code
+ENV PYTHONDONTWRITEBYTECODE 1
+
+RUN apt-get update && apt-get install -y \
+    gcc --only-upgrade
+
+RUN apt-get install -y wget
+RUN apt-get update && apt-get install -y \
+    postgresql-10 \
+    libpq-dev \
+	gcc
+
+# opencv
+RUN apt-get -y install libgl1-mesa-glx
+
+COPY ./requirements.txt /work/requirements.txt
+RUN pip3 install -r /work/requirements.txt
+
+#COPY ./work /work
+
+RUN mkdir /mldatas
+RUN mkdir /data
+RUN mkdir /data/aip
+RUN mkdir /data/aip/logs
+
+USER root
+
+WORKDIR /work

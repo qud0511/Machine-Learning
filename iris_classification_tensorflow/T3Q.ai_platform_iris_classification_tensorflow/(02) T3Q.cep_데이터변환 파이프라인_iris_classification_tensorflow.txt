@@ -1,0 +1,59 @@
+# T3Q.cep_데이터변환 파이프라인_iris_classification_tensorflow
+
+1. 데이터 변환 파이프라인 템플릿 생성
+
+T3Q.ai >> T3Q.cep >> 데이터 변환 >> 파이프라인 등록
+
+1) 데이터 변환 템플릿
+
+Postgres to Filestorage  	선택
+
+파이프라인 정보
+파이프라인 이름 		hunmin_iris_transformation
+파이프라인 설명
+
+2) Properties 설정
+Password 	postgres
+
+
+3) Variable 설정
+Name				Value
+Postgres_Filestorage_TargetPath	/AI_HUNMIN/iris_transformation
+Postgres_Filestorage_TableName	hunmin_iris_collection
+Postgres_Filestorage_PK	             reg_dt
+Postgres_Filestorage_AvroSchema
+
+{ 
+   "type": "record",
+   "name": "TestRecord",
+   "fields" : [
+        {"name": "sepallengthcm", "type": [ "null", "string" ]},
+        {"name": "sepalwidthcm", "type": [ "null", "string" ]},
+        {"name": "petallengthcm", "type": [ "null", "string" ]},
+        {"name": "petalwidthcm", "type": [ "null", "string" ]},
+        {"name": "species", "type": [ "null", "string" ]}
+    ]
+}
+
+저장
+
+*** Postgres_Filestorage_TargetPath를	/AI_HUNMIN/iris_transformation
+으로 하면 AI_HUNMIN 폴더 아래에 iris_transformation 폴더 자동으로 생성됨
+(/AI_HUNMIN/iris_transformation)
+
+4) T3Q.cep >> Home >> 파이프라인 관리 >> 데이터 변환 
+
+파이프라인(hunmin_iris_transformation) 우측 상단의 기능 버튼 클릭(시작)
+
+==================================================
+
+2. 데이터 변환 파일 확인
+
+1) T3Q.ai >> 서비스 메뉴 >> FileViewer
+
+Postgres_Filestorage_TargetPath : 기 설정한 경로(/AI_HUNMIN/iris_transformation)에 
+
+데이터 변환 파일 확인(hunmin_iris_transformation_2022-06-15-04:34:31.888.csv)
+
+
+

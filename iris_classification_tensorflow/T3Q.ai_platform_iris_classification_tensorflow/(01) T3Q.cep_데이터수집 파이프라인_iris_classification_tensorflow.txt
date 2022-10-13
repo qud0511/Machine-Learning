@@ -1,0 +1,103 @@
+# T3Q.cep_데이터수집 파이프라인_iris_classification_tensorflow
+
+1. PostgreSQL 테이블 생성
+
+T3Q.ai >> 서비스 메뉴 >> PgAdmin
+
+1) RDB 스키마 생성(테이블) 
+
+pgAdmin 접속하여
+왼쪽 상단 Servers 옆 +클릭
+datalake + 클릭 >> Tables 아래에 테이블이 생성된다
+
+테이블 생성방법
+상단의 File Object Tools Help에서
+Tools>Query Tool 메뉴 선택
+
+-- Table: public.hunmin_iris_collection
+-- DROP TABLE public.hunmin_iris_collection;
+
+CREATE TABLE public.hunmin_iris_collection(
+    sepallengthcm character varying COLLATE pg_catalog."default",
+    sepalwidthcm character varying COLLATE pg_catalog."default",
+    petallengthcm character varying COLLATE pg_catalog."default",
+    petalwidthcm character varying COLLATE pg_catalog."default",
+    species character varying COLLATE pg_catalog."default",
+    reg_dt timestamp without time zone NOT NULL DEFAULT now()    
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.hunmin_iris_collection    OWNER to postgres;
+
+2) 테이블 생성 확인
+select * from hunmin_iris_collection;
+==================================================
+
+2. T3Q.ai >> 서비스 메뉴 >> FileViewer
+
+파일관리자
+
+1) AI_HUNMIN폴더 만들고 권한 0777로 변경 ->하위 폴더iris_collection 폴더 만들기
+
+2) Log_Postgres_FileUpload_SourcePath : 기 설정한 업로드 경로(AI_HUNMIN/iris_collection)에 
+
+데이터 파일 업로드(iris_classification_dataset.csv)
+
+==================================================  
+
+====================================================
+3. 데이터 수집 파이프라인 생성
+
+T3Q.ai >> T3Q.cep >> 데이터 수집 >> 파이프라인 등록
+
+1) 데이터 수집 템플릿
+Video to Filestorage(SFTP)
+Log to Postgres(FileUpload)  	선택
+Image to Filestorage(SFTP)
+Log to Postgres(SFTP)
+Log to Filestorage(SFTP)
+파일을 업로드하여 postgres에 수집
+
+파이프라인 정보
+파이프라인 이름    hunmin_iris_collection		  파이프라인 설명  
+
+2) Properties 설정
+Password 	postgres
+
+3) Variable 설정
+Name					Value
+Log_Postgres_FileUpload_TableName		hunmin_iris_collection
+Log_Postgres_FileUpload_SourcePath		/AI_HUNMIN/iris_collection
+Log_Postgres_FileUpload_AvroSchema	
+
+{ 
+   "type": "record",
+   "name": "TestRecord",
+   "fields" : [
+        {"name": "SepalLengthCm", "type": [ "null", "string" ]},
+        {"name": "SepalWidthCm", "type": [ "null", "string" ]},
+        {"name": "PetalLengthCm", "type": [ "null", "string" ]},
+        {"name": "PetalWidthCm", "type": [ "null", "string" ]},
+        {"name": "Species", "type": [ "null", "string" ]}
+    ]
+}
+
+저장
+
+4) T3Q.cep >> Home >> 파이프라인 관리 >> 데이터 수집
+
+파이프라인(hunmin_iris_collection) 우측 상단의 기능 버튼 클릭(시작)
+
+==================================================
+
+4. 데이터 적재 확인
+
+1) T3Q.ai >> 서비스 메뉴 >> PgAdmin
+
+select * from hunmin_iris_collection;
+
+
+

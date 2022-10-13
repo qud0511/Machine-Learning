@@ -1,0 +1,86 @@
+# 프로젝트 설정_학습 알고리즘 관리_iris_classification_tensorflow
+
+밸류팩 프로젝트 >> 프로젝트 설정 >> 학습 알고리즘 관리
+
+
+1. [T3Q]AI 훈민정음 >> 프로젝트 설정 >> 학습 알고리즘 관리
+
+학습 알고리즘 관리 +(알고리즘 추가) 버튼 누르고
+
+학습 알고리즘 등록
+
+학습 알고리즘 상세
+
+1) 기본 정보 
+
+알고리즘명	iris_classification_train_tf
+설명		tensorflow를 사용하여 iris 데이터 분류
+카테고리		Classification
+실행환경		iris_classification_env
+GPU 지원		체크
+
+2) 공통 파라미터
+
+초기화 방법		사용
+최적화 방법		사용
+Learning Rate		사용
+Dropout Ratio		미사용
+랜덤 seed		사용
+자동저장 주기		미사용
+학습수행횟수		미사용
+배치 사이즈		미사용
+
+3) 모델 파라미터
+
+
+4) 시각화 설정
+
+(1) 결과 차트
+Accuracy				체크
+Loss				체크
+Confusion Matrix			체크
+MAPE
+Precision/Recall/F1-score		체크
+PCA 2D
+
+5) 소스 코드
+
+파일 업로드 버튼 누르고
+
+iris_classification_train_tensorflow.py
+
+iris_classification_train_tensorflow_sub.py
+
+platform_process.txt
+
+
+
+위 3개의 파일을 압축한 T3Q.ai_platform_iris_classification_train_tensorflow.zip을 아래 경로에서 찾는다.
+
+T3Q_HUNMIN_0_2_iris_classification_tensorflow  >> T3Q.ai_platform_iris_classification_tensorflow 
+
+그리고 T3Q.ai_platform_iris_classification_train_tensorflow.zip 파일을 선택하여 파일을 업로드함
+
+(1) 실행모듈 /iris_classification_train_tensorflow.py
+	    /iris_classification_train_tensorflow_sub.py
+	   /platform_process.txt
+
+/iris_classification_tensorflow_train.py 파일 선택하고
+
+마우스 우클릭하여 실행모듈 선택함
+
+(2) 선택파일 /iris_classification_train_tensorflow.py
+	    /iris_classification_train_tensorflow_sub.py
+ 	   /platform_process.txt
+
+저장
+
+
+6) 업로드 소스 파일
+# 파일명: iris_classification_train_tensorflow.py
+
+# 파일명: iris_classification_train_tensorflow_sub.py
+
+
+    
+    
